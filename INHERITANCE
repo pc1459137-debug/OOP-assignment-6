@@ -1,0 +1,151 @@
+//Implementation of Different Types of Inheritance in C++
+
+
+#include <iostream>
+using namespace std;
+
+// 1. Single Inheritance
+class A {
+public:
+    void showA() {
+        cout << "Base class A" << endl;
+    }
+};
+
+class B : public A {
+public:
+    void showB() {
+        cout << "Derived class B" << endl;
+    }
+};
+
+// 2. Multilevel Inheritance
+class C {
+public:
+    void showC() {
+        cout << "Class C" << endl;
+    }
+};
+
+class D : public C {
+public:
+    void showD() {
+        cout << "Class D" << endl;
+    }
+};
+
+class E : public D {
+public:
+    void showE() {
+        cout << "Class E" << endl;
+    }
+};
+
+// 3. Multiple Inheritance
+class F {
+public:
+    void showF() {
+        cout << "Base class F" << endl;
+    }
+};
+
+class G {
+public:
+    void showG() {
+        cout << "Base class G" << endl;
+    }
+};
+
+class H : public F, public G {
+public:
+    void showH() {
+        cout << "Derived class H" << endl;
+    }
+};
+
+// 4. Hierarchical Inheritance
+class I {
+public:
+    void showI() {
+        cout << "Common base class I" << endl;
+    }
+};
+
+class J : public I {
+public:
+    void showJ() {
+        cout << "Derived class J" << endl;
+    }
+};
+
+class K : public I {
+public:
+    void showK() {
+        cout << "Derived class K" << endl;
+    }
+};
+
+// 5. Hybrid Inheritance
+class Person {
+public:
+    void showPerson() {
+        cout << "Person details" << endl;
+    }
+};
+
+class Student : virtual public Person {
+public:
+    void showStudent() {
+        cout << "Student details" << endl;
+    }
+};
+
+class Employee : virtual public Person {
+public:
+    void showEmployee() {
+        cout << "Employee details" << endl;
+    }
+};
+
+class Assistant : public Student, public Employee {
+public:
+    void showAssistant() {
+        cout << "Teaching Assistant details" << endl;
+    }
+};
+
+int main() {
+    cout << "1. SINGLE INHERITANCE" << endl;
+    B obj1;
+    obj1.showA();
+    obj1.showB();
+
+    cout << "\n2. MULTILEVEL INHERITANCE" << endl;
+    E obj2;
+    obj2.showC();
+    obj2.showD();
+    obj2.showE();
+
+    cout << "\n3. MULTIPLE INHERITANCE" << endl;
+    H obj3;
+    obj3.showF();
+    obj3.showG();
+    obj3.showH();
+
+    cout << "\n4. HIERARCHICAL INHERITANCE" << endl;
+    J obj4;
+    K obj5;
+    obj4.showI();
+    obj4.showJ();
+    obj5.showI();
+    obj5.showK();
+
+    cout << "\n5. HYBRID INHERITANCE" << endl;
+    Assistant obj6;
+    obj6.showPerson();
+    obj6.showStudent();
+    obj6.showEmployee();
+    obj6.showAssistant();
+
+    return 0;
+}
